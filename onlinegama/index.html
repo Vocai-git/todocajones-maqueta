@@ -219,15 +219,23 @@ a{color:var(--coral-cta);text-underline-offset:3px}
   text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;margin-bottom:.5rem}
 
 /* --- NAVEGACIÓN DE LA MAQUETA (no va al sitio) --- */
+/* Barra de navegación de la maqueta. Envuelve en varias filas: con scroll lateral
+   en móvil solo se veían 3 de 9 botones y el resto quedaba escondido. */
 .mockbar{position:fixed;bottom:0;left:0;right:0;z-index:100;background:var(--navy-800);
-  border-top:2px solid var(--coral);padding:.5rem;overflow-x:auto}
-.mockbar-inner{display:flex;gap:.4rem;justify-content:flex-start;min-width:min-content;
-  padding-inline:.25rem}
+  border-top:3px solid var(--coral);padding:.5rem .5rem calc(.5rem + env(safe-area-inset-bottom))}
+.mockbar-label{display:block;text-align:center;color:#8fa2c6;font-size:.6875rem;
+  text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:.4rem}
+.mockbar-inner{display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center}
 .mockbar button{background:transparent;border:1px solid var(--navy-700);color:#c3cee4;
-  border-radius:100px;padding:.45rem .85rem;font:inherit;font-size:.8125rem;font-weight:600;
-  cursor:pointer;white-space:nowrap;min-height:38px}
+  border-radius:100px;padding:.4rem .7rem;font:inherit;font-size:.75rem;font-weight:600;
+  cursor:pointer;white-space:nowrap;min-height:36px}
+.mockbar button:hover{border-color:#5d6f96;color:#fff}
 .mockbar button[aria-selected="true"]{background:var(--coral-cta);border-color:var(--coral-cta);color:#fff}
-body{padding-bottom:64px}
+body{padding-bottom:176px}
+@media (min-width:640px){
+  .mockbar button{font-size:.8125rem;padding:.45rem .85rem;min-height:38px}
+  body{padding-bottom:104px}
+}
 .screen{display:none}
 .screen.is-active{display:block}
 .mocknote{background:#fff8e6;border-left:4px solid #e0a800;padding:var(--space-2) var(--space-3);
@@ -745,6 +753,91 @@ body{padding-bottom:64px}
 </div>
 
 <!-- =========================================================
+     PANTALLA — KIT DIGITAL
+     ========================================================= -->
+<div class="screen" id="s-kitdigital">
+  <div class="page-hero">
+    <div class="wrap">
+      <p class="crumbs"><a href="#">Inicio</a> › Kit Digital</p>
+      <h1>Kit Digital</h1>
+      <p class="lead">Somos Agente Digitalizador certificado. Te acompañamos en todo el proceso
+        para que uses tu bono en lo que de verdad necesita tu negocio.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#">Quiero que me asesoréis</a>
+        <a class="btn btn-secondary" href="tel:+34942941047">942 941 047</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Soluciones subvencionables</p>
+      <h2>Qué puedes digitalizar con tu bono</h2>
+      <div class="solutions" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:var(--space-4)">
+        <a class="sol" href="#"><div class="sol-body" style="padding:var(--space-3)"><h4>Web y presencia en Internet</h4><span>Obtén facilidades para la creación de tu propia página web con todas las facilidades disponibles.</span><span class="sol-more">Ver más →</span></div></a>
+        <a class="sol" href="#"><div class="sol-body" style="padding:var(--space-3)"><h4>Comercio Electrónico</h4><span>Sincroniza tu comercio electrónico con tu ERP y ten comunicación entre la gestión y tu e-commerce.</span><span class="sol-more">Ver más →</span></div></a>
+        <a class="sol" href="#"><div class="sol-body" style="padding:var(--space-3)"><h4>Business Intelligence</h4><span>Analiza datos de manera profesional y crea visualizaciones interactivas.</span><span class="sol-more">Ver más →</span></div></a>
+        <a class="sol" href="#"><div class="sol-body" style="padding:var(--space-3)"><h4>Redes Sociales</h4><span>Tu propio Community Manager y tu negocio adaptado a redes para mantener informados a los clientes.</span><span class="sol-more">Ver más →</span></div></a>
+        <a class="sol" href="#"><div class="sol-body" style="padding:var(--space-3)"><h4>Gestión de Procesos</h4><span>Gana eficiencia con soluciones ERP, facturación, importación de datos y automatización.</span><span class="sol-more">Ver más →</span></div></a>
+        <a class="sol" href="#"><div class="sol-body" style="padding:var(--space-3)"><h4>Factura Electrónica</h4><span>Digitaliza tu factura de manera ágil y sencilla y agiliza la gestión de facturación.</span><span class="sol-more">Ver más →</span></div></a>
+        <a class="sol" href="#"><div class="sol-body" style="padding:var(--space-3)"><h4>Ciberseguridad</h4><span>Gestiona problemas de seguridad al instante con un servicio con IA en tiempo real.</span><span class="sol-more">Ver más →</span></div></a>
+      </div>
+
+      <div class="scope" style="margin-top:var(--space-4)">
+        <strong>⚠️ Benjamín: aquí hay una decisión que tienes que tomar</strong>
+        Hoy esta página muestra importes en cada solución: <em>«Web y presencia en Internet:
+        desde 1200 €»</em>, <em>«Comercio Electrónico: desde 1500 €»</em>, y así con las siete.
+        Los he quitado siguiendo tu indicación de que no salgan precios.
+        <br><br>
+        Pero estos no son precios de producto: son los <strong style="display:inline">tramos de la
+        ayuda pública</strong>, y ayudan a que la gente se sitúe. Si quieres que vuelvan, se
+        reponen en un minuto. Dime.
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2>Preguntas frecuentes sobre el Kit Digital en Cantabria</h2>
+        <p>El Kit Digital o Bono Digital es un programa de ayudas económicas del Ministerio de
+          Asuntos Económicos y Transformación Digital del Gobierno de España, dirigido a pymes
+          y a autónomos.</p>
+        <p>Tú eliges lo que necesitas para avanzar en esta nueva realidad digital. Estaremos
+          disponibles en todo el proceso para que puedas elegir la solución y el Agente
+          Digitalizador, y así puedas digitalizar y mejorar tu negocio.</p>
+        <ul class="checks" style="margin-top:var(--space-3)">
+          <li>El importe máximo depende del tamaño de tu empresa y de la solución</li>
+          <li>Solo puede gastarse con Agentes Digitalizadores certificados por Red.es</li>
+          <li>Nosotros lo somos, y te asesoramos en todo el proceso</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>¿Cumples los requisitos?</h3>
+        <p style="color:var(--muted);font-size:.9375rem">Llámanos y te lo miramos sin compromiso.
+          Te decimos si te encaja y qué solución te conviene.</p>
+        <a class="btn btn-primary" href="tel:+34942941047" style="margin-top:var(--space-2)">Llamar al 942 941 047</a>
+        <p style="margin-top:var(--space-3);font-size:.8125rem;color:var(--muted)">
+          También puedes escribirnos a <a href="mailto:hola@onlinegama.com">hola@onlinegama.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="scope">
+        <strong>Aviso: hay una segunda página de Kit Digital y está rota</strong>
+        La página <em>/landing-kit-digital/</em> imprime código en crudo en mitad del contenido
+        (<code>[vc_row][vc_column][us_image image=»30518″…</code>). Son restos del constructor del
+        tema anterior, que el tema actual ya no interpreta. O se arregla o se deja fuera del menú
+        — dime qué prefieres. 🔒 No se borra ni se cambia su URL sin tu permiso.
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- =========================================================
      PANTALLA 6 — BLOG
      ========================================================= -->
 <div class="screen" id="s-blog">
@@ -761,27 +854,40 @@ body{padding-bottom:64px}
         <article class="post">
           <div class="post-media">Imagen destacada del post</div>
           <div class="post-body">
-            <p class="post-meta">Normativa · 2026</p>
-            <h3>Verifactu: qué cambia y desde cuándo te obliga</h3>
-            <p style="color:var(--muted);font-size:.9375rem">Resumen claro de la norma y qué tienes que hacer si facturas con programa.</p>
+            <p class="post-meta">Ayudas · 2026</p>
+            <h3>Nuevas ayudas para PYMES de Cantabria en 2026: digitalización, ciberseguridad y sostenibilidad</h3>
             <a class="btn btn-secondary" href="#">Leer</a>
           </div>
         </article>
         <article class="post">
           <div class="post-media">Imagen destacada del post</div>
           <div class="post-body">
-            <p class="post-meta">Kit Digital · 2026</p>
-            <h3>Kit Digital: cómo pedirlo paso a paso</h3>
-            <p style="color:var(--muted);font-size:.9375rem">Requisitos, plazos y en qué puedes gastar el bono.</p>
+            <p class="post-meta">Software</p>
+            <h3>AHORA One Lite simplifica la gestión diaria de tu negocio y cumple con las Leyes Antifraude y Crea y Crece</h3>
             <a class="btn btn-secondary" href="#">Leer</a>
           </div>
         </article>
         <article class="post">
           <div class="post-media">Imagen destacada del post</div>
           <div class="post-body">
-            <p class="post-meta">TPV · 2026</p>
-            <h3>Cómo elegir el TPV de tu bar sin equivocarte</h3>
-            <p style="color:var(--muted);font-size:.9375rem">Las tres preguntas que hay que hacerse antes de comprar.</p>
+            <p class="post-meta">Software</p>
+            <h3>AHORA ONE, Plataforma Online de Gestión para Autónomos y microempresas</h3>
+            <a class="btn btn-secondary" href="#">Leer</a>
+          </div>
+        </article>
+        <article class="post">
+          <div class="post-media">Imagen destacada del post</div>
+          <div class="post-body">
+            <p class="post-meta">Soluciones</p>
+            <h3>Zone Soft, una nueva solución para tu empresa</h3>
+            <a class="btn btn-secondary" href="#">Leer</a>
+          </div>
+        </article>
+        <article class="post">
+          <div class="post-media">Imagen destacada del post</div>
+          <div class="post-body">
+            <p class="post-meta">Soluciones</p>
+            <h3>PulsayVoy, innovación y rapidez en cada pedido</h3>
             <a class="btn btn-secondary" href="#">Leer</a>
           </div>
         </article>
@@ -848,7 +954,7 @@ body{padding-bottom:64px}
 <div class="screen" id="s-alcance">
   <div class="page-hero">
     <div class="wrap">
-      <h1>Qué entra y qué no</h1>
+      <h1>Alcance</h1>
       <p class="lead">Para que quede claro antes de empezar.</p>
     </div>
   </div>
@@ -890,14 +996,16 @@ body{padding-bottom:64px}
 </div>
 
 <nav class="mockbar" aria-label="Páginas de la maqueta">
+  <span class="mockbar-label">Toca para ver cada página</span>
   <div class="mockbar-inner" role="tablist">
-    <button role="tab" aria-selected="true" data-t="s-home">Home</button>
+    <button role="tab" aria-selected="true" data-t="s-home">Inicio</button>
     <button role="tab" aria-selected="false" data-t="s-servicios">Servicios</button>
-    <button role="tab" aria-selected="false" data-t="s-servicio">Molde servicio</button>
-    <button role="tab" aria-selected="false" data-t="s-seo">Molde ciudad</button>
     <button role="tab" aria-selected="false" data-t="s-productos">Productos</button>
+    <button role="tab" aria-selected="false" data-t="s-kitdigital">Kit Digital</button>
     <button role="tab" aria-selected="false" data-t="s-blog">Blog</button>
     <button role="tab" aria-selected="false" data-t="s-contacto">Contacto</button>
+    <button role="tab" aria-selected="false" data-t="s-servicio">Ficha servicio</button>
+    <button role="tab" aria-selected="false" data-t="s-seo">Página ciudad</button>
     <button role="tab" aria-selected="false" data-t="s-alcance">Alcance</button>
   </div>
 </nav>
